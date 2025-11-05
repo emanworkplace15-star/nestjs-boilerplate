@@ -1,0 +1,15 @@
+services:
+  nest_app:
+    image: nest_boilerplate:latest
+    container_name: nest_boilerplate
+    restart: always
+    ports:
+      - "3004:8000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - webproxy
+
+networks:
+  webproxy:
+    external: true  
